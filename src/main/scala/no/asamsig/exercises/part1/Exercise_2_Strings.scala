@@ -13,7 +13,7 @@ object Exercise_2_Strings {
    * Use string interpolation s"$var" to format [name] and [value] as "name=value"
    */
   def stringFormat(name: String, value: Number): String = {
-    ???
+    s"$name=$value"
   }
 
   /**
@@ -30,7 +30,12 @@ object Exercise_2_Strings {
    *
    */
   def splitString(input: String): String = {
-    ???
+    input.split(", ") match {
+      case Array(lastName, firstName, age) =>
+        s"${firstName.head.toUpper}${lastName.head.toUpper}: $age"
+    }
+//    val strings = input.split(", ")
+//    strings.init.map(_.head.toUpper).reverse.mkString + ": " + strings.last
   }
 
   /**
@@ -42,7 +47,7 @@ object Exercise_2_Strings {
    *
    */
   def isPalindrome(s: String): Boolean = {
-    ???
+    s.reverse == s
   }
 
   /**
@@ -53,7 +58,7 @@ object Exercise_2_Strings {
    *
    */
   def jsonFormat(list: List[Int]): String = {
-    ???
+    list.mkString("[", ", ", "]")
   }
 
   /**
@@ -69,7 +74,15 @@ object Exercise_2_Strings {
    * """
    **/
   def movieToJson(title: String, year: Int, runtime: Int, rating: String = "PG-12", country: String = "USA"): String = {
-    ???
+    s"""
+      |{
+      |"title": "$title",
+      |"year": $year,
+      |"runtime": $runtime,
+      |"rating": "$rating",
+      |"country": "$country"
+      |}
+      |""".stripMargin
   }
 
   /**
@@ -81,6 +94,6 @@ object Exercise_2_Strings {
    *
    */
   def acronym(title: String): String = {
-    ???
+    title.split(" ").map(_.head.toUpper).mkString
   }
 }

@@ -12,7 +12,7 @@ object Exercise_1_Functions {
    *
    * Make the function [[helloWorld]] return the [[String]] "Hello World!"
    */
-  def helloWorld: String = ???
+  def helloWorld: String = "Hello World!"
 
   /**
    * 2. Assignment.
@@ -21,7 +21,7 @@ object Exercise_1_Functions {
    *
    */
   def assignment(): Int = {
-    val a: Int = ???
+    val a: Int = 5
     val b = 5
     a * b
   }
@@ -34,10 +34,10 @@ object Exercise_1_Functions {
    * remove the call to fail("...") from the corresponding test when you're done)
    */
   def varAndVal(a: String, b: String): String = {
-    var name: String = a.capitalize
-    name += " and "
-    name += b.capitalize
-    name
+    val nameA: String = a.capitalize
+    val and = " and "
+    val nameB = b.capitalize
+    nameA + and + nameB
   }
 
   /**
@@ -45,15 +45,15 @@ object Exercise_1_Functions {
    *
    * Return the square of the input [n]
    */
-  def square(n: Int): Int = ???
+  def square(n: Int): Int = n * n
 
   /**
    * 5. Max.
    *
-   * Make this function the highest number of [n] or [m]
+   * Make this function return the highest number of [n] or [m]
    */
   def max(n: Int, m: Int): Int = {
-    ???
+    Math.max(n, m)
   }
 
   /**
@@ -62,7 +62,7 @@ object Exercise_1_Functions {
    * Make this function return the highest number of [n], [m] and [i]
    */
   def maxOf3(n: Int, m: Int, i: Int): Int = {
-    ???
+    List(n, m, i).max
   }
 
   /**
@@ -71,7 +71,7 @@ object Exercise_1_Functions {
    * Implement a function to the absolute value of the input
    */
   def abs(value: Double): Double = {
-    ???
+    value.abs
   }
 
   // EXTRA if you've got time in the end, come back and solve these
@@ -89,7 +89,12 @@ object Exercise_1_Functions {
    *
    */
   def isLeapYear(year: Int): Boolean = {
-    ???
+    (year % 4, year % 100, year % 400) match {
+      case (_, _, 0) => true
+      case (_, 0, _) => false
+      case (0, _, _) => true
+      case _         => false
+    }
   }
 
 
@@ -104,7 +109,11 @@ object Exercise_1_Functions {
    *
    */
   def pace(distance: Int, minutes: Int, seconds: Int): (Int, Int) = {
-    ???
+    val km = distance / 1000.0
+    val minPerKm: Int = (minutes / km).toInt
+    val secLefts = ((minutes / km) - minPerKm) * 60
+    val secPerKm = seconds / km
+    (minPerKm, secLefts.toInt + secPerKm.toInt)
   }
 
 }

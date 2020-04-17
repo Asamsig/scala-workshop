@@ -23,7 +23,10 @@ object Exercise_3_Types {
    *
    */
   def absenceOfAValue(firstName: String, middleName: Option[String], lastName: String, occupation: Option[String]): String = {
-    ???
+    s"""|FIRSTNAME: ${firstName.capitalize}
+        |MIDDLENAME: ${middleName.map(_.capitalize).getOrElse("NA")}
+        |LASTNAME: ${lastName.capitalize}
+        |OCCUPATION: ${occupation.map(_.capitalize).getOrElse("NA")}""".stripMargin
   }
 
   /**
@@ -34,8 +37,7 @@ object Exercise_3_Types {
    */
   def findPetAndCategoryName(petStoreService: PetStoreService, petId: PetId): (String, String) = {
     val pet = petStoreService.findById(petId)
-    // (pet.name, pet.category.name)
-    ???
+    (pet.map(_.name).getOrElse("NA"), pet.flatMap(_.category.map(_.name)).getOrElse("NA"))
   }
 
   /**
@@ -47,7 +49,12 @@ object Exercise_3_Types {
    * For any other type return "I don't know what that was"
    */
   def mysteryInput(input: Any): String = {
-    ???
+    input match {
+      case input: String => s""""$input": String"""
+      case input: Int => s"$input: Int"
+      case input: Double => s"$input: Double"
+      case _ => "I don't know what that was"
+    }
   }
 
   /**
@@ -63,6 +70,13 @@ object Exercise_3_Types {
    *
    */
   def mysteryInputOption(input: Option[Any]): Option[Any] = {
-    ???
+    input.flatMap {
+      case input: String if input.nonEmpty => Some(input.head)
+      case input: Int if input % 2 == 0 => Some(input / 2)
+      case _: Int => Some(1)
+      case input: Double if input >= 0 => Some(0)
+      case _: Double => Some(-1)
+      case _ => None
+    }
   }
 }
