@@ -15,7 +15,7 @@ object Exercise_2_Lambdas {
    * Use this with a lambda to return the input String with all lower case characters removed.
    */
   def filterUpperCase(s: String): String = {
-    ???
+    s.filterNot(_.isLower)
   }
 
   /**
@@ -26,7 +26,7 @@ object Exercise_2_Lambdas {
    * Use it to count the number of occurrences of the Char [c] in the String [s]
    */
   def letterCount(s: String, c: Char): Int = {
-    ???
+    s.count(_ == c)
   }
 
   /**
@@ -36,7 +36,7 @@ object Exercise_2_Lambdas {
    * otherwise 0
    */
   def oneOrZero(int: Int, lambda: Int => Boolean): Int = {
-    ???
+    if(lambda(int)) 1 else 0
   }
 
   /**
@@ -46,7 +46,7 @@ object Exercise_2_Lambdas {
    * the two ints.
    */
   def intOperation(i1: Int, i2: Int, operation: (Int, Int) => Int): Int = {
-    ???
+    operation(i1, i2)
   }
 
   /**
@@ -56,6 +56,6 @@ object Exercise_2_Lambdas {
    * which given a string return a new string where the input is surrounded by prefix and postfix
    */
   def surroundString(prefix: String, postfix: String): String => String = {
-    ???
+    string => s"$prefix$string$postfix"
   }
 }

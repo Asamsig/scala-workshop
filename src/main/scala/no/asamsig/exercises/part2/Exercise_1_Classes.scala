@@ -7,7 +7,9 @@ package no.asamsig.exercises.part2
  */
 object Exercise_1_Classes {
 
-  class Task(val id: Long, val description: String, val priority: Int)
+  case class Task(val id: Long, val description: String, val priority: Int, val completed: Boolean = false) extends Ordered[Task] {
+    override def compare(that: Task): Int = priority compareTo that.priority
+  }
 
   /**
    * 1. Create an Instance.
@@ -15,7 +17,7 @@ object Exercise_1_Classes {
    * Return an instance of the [Task] class with id 100, description "Buy milk", and priority 1
    */
   def taskInstance(): Task = {
-    ???
+    new Task(100, "Buy milk", 1, false)
   }
 
   /**
@@ -26,7 +28,7 @@ object Exercise_1_Classes {
    *
    */
   def completedTask(): Task = {
-    ???
+    new Task(1, "Buy milk", 1, true)
   }
 
   /**
@@ -37,7 +39,7 @@ object Exercise_1_Classes {
    * Then return the result of calling t1.compareTo(2) from this function
    */
   def comparable(t1: Task, t2: Task): Int = {
-    ???
+    t1.compareTo(t2)
   }
 
   /**
@@ -47,7 +49,10 @@ object Exercise_1_Classes {
    * are equals. Does comparing the instances with '==' work?
    */
   def equality(t1: Task, t2: Task): Boolean = {
-    ???
+    t1.id == t2.id &&
+    t1.priority == t2.priority &&
+    t1.description == t2.description &&
+    t1.completed == t2.completed
   }
 
   /**
@@ -57,8 +62,8 @@ object Exercise_1_Classes {
    * Now, see if you can find a simpler way to compare two instances for equality?
    *
    */
-  def dataClassEquality(t1: Task, t2: Task): Boolean = {
-    ???
+  def caseClassEquality(t1: Task, t2: Task): Boolean = {
+    t1 == t2
   }
 
   /**
@@ -69,6 +74,6 @@ object Exercise_1_Classes {
    * be able to do this in a single line
    */
   def copyAndComplete(task: Task): Task = {
-    ???
+    task.copy(completed = true)
   }
 }

@@ -14,7 +14,7 @@ class Exercise_1_FunctionsTest extends AnyFreeSpec with Matchers {
   }
 
   "3. use val instead of var" in {
-    fail("Remove this line when you have finished the exercise")
+//    fail("Remove this line when you have finished the exercise")
     Exercise_1_Functions.varAndVal("Korg", "Miek") shouldEqual ("Korg and Miek")
   }
 
