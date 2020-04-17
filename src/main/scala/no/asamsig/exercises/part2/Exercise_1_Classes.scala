@@ -55,9 +55,10 @@ object Exercise_1_Classes {
    *
    * Change Task to be a 'case class'
    * Now, see if you can find a simpler way to compare two instances for equality?
+   * Also notice that now the new keyword is not necessary, when creating an instance.
    *
    */
-  def dataClassEquality(t1: Task, t2: Task): Boolean = {
+  def caseClassEquality(t1: Task, t2: Task): Boolean = {
     ???
   }
 

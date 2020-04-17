@@ -74,13 +74,9 @@ package object playstore {
     import scala.jdk.CollectionConverters._
     new CSVReaderHeaderAware(new FileReader(filename)).asScala.flatMap { row =>
       val triedInfo = Try(appInfoFromArray(row))
-      triedInfo.failed.foreach(_ => println(s"Error: $row\n${row.toList}"))
+      triedInfo.failed.foreach(error => println(s"Error: $error\n${row.toList}"))
       triedInfo.toOption
     }.toList
-  }
-
-  def main() {
-    parseCsv("src/main/resources/googleplaystore.csv")
   }
 
 }
