@@ -8,7 +8,7 @@ import reflect.runtime.{universe => ru}
 class Exercise_1_ClassesTest extends AnyFreeSpec with Matchers {
 
   "1. An instance of Task should be returned" in {
-    val task = Exercise_1_Classes.taskInstanse()
+    val task = Exercise_1_Classes.taskInstance()
     task shouldBe a[Task]
     task.description shouldBe "Buy milk"
     task.priority shouldBe 1
@@ -36,7 +36,7 @@ class Exercise_1_ClassesTest extends AnyFreeSpec with Matchers {
     }
   }
 
-  "3. Task should implement the 'Comparable' interface" in {
+  "3. Task should implement the 'Ordered' interface" in {
     val t1 = new Task(1, "", 10)
     val t2 = new Task(2, "", 11)
 
@@ -70,11 +70,11 @@ class Exercise_1_ClassesTest extends AnyFreeSpec with Matchers {
     val t3 = new Task(2, "Foo", 10)
     val t4 = new Task(1, "Bar", 10)
     val t5 = new Task(1, "Foo", 11)
-    Exercise_1_Classes.dataClassEquality(t1, t1) shouldBe true
-    Exercise_1_Classes.dataClassEquality(t1, t2) shouldBe true
-    Exercise_1_Classes.dataClassEquality(t1, t3) shouldBe false
-    Exercise_1_Classes.dataClassEquality(t1, t4) shouldBe false
-    Exercise_1_Classes.dataClassEquality(t1, t5) shouldBe false
+    Exercise_1_Classes.caseClassEquality(t1, t1) shouldBe true
+    Exercise_1_Classes.caseClassEquality(t1, t2) shouldBe true
+    Exercise_1_Classes.caseClassEquality(t1, t3) shouldBe false
+    Exercise_1_Classes.caseClassEquality(t1, t4) shouldBe false
+    Exercise_1_Classes.caseClassEquality(t1, t5) shouldBe false
     withClue("Task is not a case class: ") {
       ru.typeOf[Task].typeSymbol.asClass.isCaseClass shouldBe true
     }
@@ -91,7 +91,7 @@ class Exercise_1_ClassesTest extends AnyFreeSpec with Matchers {
     val task = new Task(1, "Foo", 10)
     val copy = Exercise_1_Classes.copyAndComplete(task)
     withClue("The property 'completed' should be 'true':") {
-      completed.map(_.invoke(copy)) shouldBe true
+      completed.map(_.invoke(copy)) shouldBe Some(true)
     }
   }
 

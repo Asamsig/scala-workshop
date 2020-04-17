@@ -36,4 +36,4 @@ The slides for the presentation can be viewed ~~here~~
 
 ### Credits
 
-This a port of [kotlin-workshop](https://github.com/mortenaa/kotlin-workshop) by [Morten N. Åsnes](https://github.com/mortenaa) and [Bjørn Hamre](https://github.com/javaguruen), a huge thanks goes to you both.
+This a port of [kotlin-workshop](https://github.com/mortenaa/kotlin-workshop) by [Morten N. Åsnes](https://github.com/mortenaa) and [Bjørn Hamre](https://github.com/javaguruen), a huge thanks goes to them both.

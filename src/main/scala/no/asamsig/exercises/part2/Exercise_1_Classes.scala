@@ -14,7 +14,7 @@ object Exercise_1_Classes {
    *
    * Return an instance of the [Task] class with id 100, description "Buy milk", and priority 1
    */
-  def taskInstanse(): Task = {
+  def taskInstance(): Task = {
     ???
   }
 
@@ -32,7 +32,7 @@ object Exercise_1_Classes {
   /**
    * 3. Implement an interface.
    *
-   * Implement the [Comparable] ('Comparable<Task>')interface for Task, so tasks can be ordered by priority
+   * Implement the [[Ordered]] trait for Task, so tasks can be ordered by priority
    * t1 > t2 should be true if t1.priority > t2.priority
    * Then return the result of calling t1.compareTo(2) from this function
    */
@@ -55,7 +55,6 @@ object Exercise_1_Classes {
    *
    * Change Task to be a 'case class'
    * Now, see if you can find a simpler way to compare two instances for equality?
-   *
    *
    */
   def dataClassEquality(t1: Task, t2: Task): Boolean = {

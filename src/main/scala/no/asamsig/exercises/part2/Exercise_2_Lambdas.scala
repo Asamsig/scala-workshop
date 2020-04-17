@@ -10,7 +10,8 @@ object Exercise_2_Lambdas {
   /**
    * 1. Filter with lambda
    *
-   * [String.filter] takes as argument a lambda with the signature '(Char) => Boolean'
+   * [[scala.collection.immutable.WrappedString.filter]]/[[scala.collection.immutable.WrappedString.filterNot]] takes as argument a lambda with the signature 'Char => Boolean'
+   * It is available on Strings as an extension method.
    * Use this with a lambda to return the input String with all lower case characters removed.
    */
   def filterUpperCase(s: String): String = {
@@ -20,7 +21,7 @@ object Exercise_2_Lambdas {
   /**
    * 2. Count letters
    *
-   * [String.count] can take a lambda with signature 'Char => Boolean' to return a count
+   * [[scala.collection.StringOps.count]] can take a lambda with signature 'Char => Boolean' to return a count
    * of how many characters in a String for which the lambda returns 'true'
    * Use it to count the number of occurrences of the Char [c] in the String [s]
    */
