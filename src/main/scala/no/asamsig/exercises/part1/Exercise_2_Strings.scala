@@ -10,7 +10,7 @@ object Exercise_2_Strings {
   /**
    * 1. StringFormat.
    *
-   * Use string templates ($) to format [name] and [value] as "name=value"
+   * Use string interpolation s"$var" to format [name] and [value] as "name=value"
    */
   def stringFormat(name: String, value: Number): String = {
     ???
@@ -48,10 +48,9 @@ object Exercise_2_Strings {
   /**
    * 4. Json Format
    *
-   * Use the function [mkString] on the input [list] to return the comma separated list inside brackets.
+   * Use the function [[List.mkString]] on the input [list] to return the comma separated list inside brackets.
    * i.e. 1, 2, 3 => "[1, 2, 3]"
    *
-   * HINT: Use the named arguments `prefix` and `postfix`
    */
   def jsonFormat(list: List[Int]): String = {
     ???

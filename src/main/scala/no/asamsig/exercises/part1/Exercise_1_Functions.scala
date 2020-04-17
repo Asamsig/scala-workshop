@@ -10,7 +10,7 @@ object Exercise_1_Functions {
   /**
    * 1. Hello World.
    *
-   * Make the function [helloWorld] the [String] "Hello World!"
+   * Make the function [[helloWorld]] return the [[String]] "Hello World!"
    */
   def helloWorld: String = ???
 
@@ -43,7 +43,7 @@ object Exercise_1_Functions {
   /**
    * 4. Square
    *
-   * the square of the input [n]
+   * Return the square of the input [n]
    */
   def square(n: Int): Int = ???
 
@@ -59,7 +59,7 @@ object Exercise_1_Functions {
   /**
    * 6. Max of 3.
    *
-   * Make this function the highest number of [n], [m] and [i]
+   * Make this function return the highest number of [n], [m] and [i]
    */
   def maxOf3(n: Int, m: Int, i: Int): Int = {
     ???
@@ -69,7 +69,6 @@ object Exercise_1_Functions {
    * 7. Absolute value
    *
    * Implement a function to the absolute value of the input
-   * (without using the built in [Double.absoluteValue])
    */
   def abs(value: Double): Double = {
     ???
@@ -86,7 +85,7 @@ object Exercise_1_Functions {
    * except for years that are exactly divisible by 100,
    * but these centurial years *are* leap years if they are exactly divisible by 400.
    *
-   * The function [Int.rem] will be usefull
+   * The function [[Int.%]] will be useful
    *
    */
   def isLeapYear(year: Int): Boolean = {
@@ -95,12 +94,12 @@ object Exercise_1_Functions {
 
 
   /**
-   * 9. Pace caclculator
+   * 9. Pace calculator
    *
    * Given a distance in meters, and the time it took to run it in minutes and seconds,
    * calculate the pace (as minutes and seconds per km)
    *
-   * use `Pair(minutes, seconds)` to two values
+   * use `(minutes, seconds)` return to two values
    *
    *
    */

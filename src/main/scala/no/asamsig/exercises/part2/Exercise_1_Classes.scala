@@ -2,7 +2,7 @@ package no.asamsig.exercises.part2
 
 /**
  *
- * Scala Workshop Exercise 4
+ * Scala Workshop Exercise 1
  *
  */
 object Exercise_1_Classes {

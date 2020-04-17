@@ -9,8 +9,8 @@ import org.scalatest.matchers.should.Matchers
 
 class Exercise_3_TypesTest extends AnyFreeSpec with Matchers with MockitoSugar {
 
-  "1. nullabillity Test" in {
-    Exercise_3_Types.nullable("Lea", Option.empty, "Williamson", Option("footballer")) shouldBe
+  "1. absence of a value Test" in {
+    Exercise_3_Types.absenceOfAValue("Lea", Option.empty, "Williamson", Option("footballer")) shouldBe
       """|FIRSTNAME: Lea
          |MIDDLENAME: NA
          |LASTNAME: Williamson

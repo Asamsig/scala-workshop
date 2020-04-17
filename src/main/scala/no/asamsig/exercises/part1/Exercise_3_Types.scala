@@ -10,10 +10,10 @@ import no.asamsig.service.petstore.{PetId, PetStoreService}
 object Exercise_3_Types {
 
   /**
-   * 1. Nullabillity
+   * 1. Absence of a value
    *
    * Return a multiline string with the parameter names and values. Parameter names
-   * should be uppercase, values should be capitalized, and null values should be represented by "NA"
+   * should be uppercase, values should be capitalized, and missing values should be represented by "NA"
    *
    * example:
    * FIRSTNAME: Lea
@@ -22,15 +22,15 @@ object Exercise_3_Types {
    * OCCUPATION: Footballer
    *
    */
-  def nullable(firstName: String, middleName: Option[String], lastName: String, occupation: Option[String]): String = {
+  def absenceOfAValue(firstName: String, middleName: Option[String], lastName: String, occupation: Option[String]): String = {
     ???
   }
 
   /**
-   * 2. Nullabillity and Elvis
+   * 2. Nested missing values
    *
    * Given the supplied petStoreService and petId, fix the commented out code (it won't compile as it is)
-   * (use "NA" as replacement for null values)
+   * (use "NA" as replacement for missing values)
    */
   def findPetAndCategoryName(petStoreService: PetStoreService, petId: PetId): (String, String) = {
     val pet = petStoreService.findById(petId)
@@ -51,7 +51,7 @@ object Exercise_3_Types {
   }
 
   /**
-   * 4. Pattern matching with Option
+   * 4. Pattern matching with missing values
    *
    * This function should decide what type the input is, and return
    * the first character if it is a String
