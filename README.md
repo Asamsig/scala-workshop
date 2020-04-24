@@ -12,7 +12,7 @@ We will cover topics like functions, classes, collections, some functional progr
 generics, higher-order functions and more.
 
 ### Preperations
-Please bring a laptop for the exercises with Scala installed and a supported IDE of your choice, IntelliJ IDEA Community/Ultimate edition is recommended. You can also download this [https://github.com/JetBrains/intellij-scala-bundle/tree/v2020-04-23](One-click installation bundle) containing IntelliJ IDEA + Scala Plugin + Scala + JDK, all ready to be fired up.
+Please bring a laptop for the exercises with Scala installed and a supported IDE of your choice, IntelliJ IDEA Community/Ultimate edition is recommended. You can also download this [One-click installation bundle](https://github.com/JetBrains/intellij-scala-bundle/tree/v2020-04-23) containing IntelliJ IDEA + Scala Plugin + Scala + JDK, all ready to be fired up.
 
 It will save time if you clone or download this repository in advance.
 
